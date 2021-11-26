@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 
 const express = require("express");
 
@@ -10,7 +10,7 @@ const cementsRoutes = require("./Routes/cementsRoutes");
 const JWTPASS="aspirin"
 const cors = require("cors");
 
-const port = 3001;
+
 
 try{
     (async function(){
@@ -58,8 +58,8 @@ try{
 
     app.use("/cements",cementsRoutes);
 
-    app.listen(port,()=>{
-        console.log(`Server running in the port ${port}`);
+    app.listen(process.env.PORT,()=>{
+        console.log(`Server running in the port ${process.env.PORT}`);
     })
     })();
 
